@@ -8,6 +8,18 @@ BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
 
 -->
+<?php
+    require_once __DIR__ . '/classes/Bed.php';
+    require_once __DIR__ . '/classes/Card.php';
+    require_once __DIR__ . '/classes/Food.php';
+    require_once __DIR__ . '/classes/Game.php';
+    require_once __DIR__ . '/classes/User.php';
+
+    
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

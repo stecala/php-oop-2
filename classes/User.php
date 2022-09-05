@@ -41,4 +41,9 @@ class User{
     public function setCart($_cart){
         return $this->cart = $_cart;
     }
+
+
+    public function addToCart($_itemToAdd){
+        $this->cart[] = $_itemToAdd;
+    }
 }
