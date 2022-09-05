@@ -46,4 +46,14 @@ class User{
     public function addToCart($_itemToAdd){
         $this->cart[] = $_itemToAdd;
     }
+
+
+    public function getSum(){
+        $sum = 0;
+        foreach($this->cart as $singleProduct){
+            $sum += $singleProduct->getPrice();
+        }
+
+        return $sum;
+    }
 }

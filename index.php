@@ -21,11 +21,19 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     $chickenTrumpet = new Game('Chicken Trumpet', 20.99, 'Plastic', '20x5cm', true);
     $ginoPino = new User('Gino Pino', 'ginopino@gmail.com', false, null);
 
+    $discount = 0;
+
     if(!$card1->checkValidationCard()){
         echo 'Carta scaduta';
     }
     
+    if($ginoPino->getRegistered()){
+        $discount=0.2;
+    }
+
+    $ginoPino->addToCart($chickenTrumpet);
     
+    var_dump($ginoPino->getSum());
 ?>
 <!DOCTYPE html> 
 <html lang="en">
