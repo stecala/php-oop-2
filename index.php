@@ -39,7 +39,16 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     else{
         $finalPrice = $ginoPino->getSum();   
     }
-    var_dump($finalPrice)
+    var_dump($finalPrice);
+
+    $ceasar->setMonth('10');
+
+    if($ceasar->availability()){
+        echo 'prodotto disponibile';   
+    }
+    else{
+        echo 'questo prodotto e\' disponibile solo il mese n. '.$ceasar->getMonth();
+    }
 ?>
 <!DOCTYPE html> 
 <html lang="en">
