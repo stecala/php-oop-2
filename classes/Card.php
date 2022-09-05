@@ -5,7 +5,8 @@ class Card{
     protected $frontCode;
     protected $backCode;
     protected $accountHolder;
-
+    
+    
     public function __construct($_expiringDate, $_frontCode, $_backCode, $_accountHolder)
     {
         $this->expiringDate = $_expiringDate;
@@ -43,12 +44,14 @@ class Card{
     }
 
 
-    public function checkValidationCard($expiringDate){
-        if(date('y-m-d') > $expiringDate){
+    public function checkValidationCard(){
+        if(date('Y-m-d') <= $this->expiringDate){
             return true;
         }
         else{
             return false;
-        }
+        }    
     }
+
+
 }

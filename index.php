@@ -15,12 +15,19 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     require_once __DIR__ . '/classes/Game.php';
     require_once __DIR__ . '/classes/User.php';
 
+    $ceasar = new Food('ceaser', 2.99, '24/09/22',['chicken', 'vegetables']);
+    $card1 = new Card('2025-12-20', 234, '054', 'Gino Pino');
+    $bedsPuppy = new Bed('KingPuppy', 45, 'Silk','100x100cm');
+    $chickenTrumpet = new Game('Chicken Trumpet', 20.99, 'Plastic', '20x5cm', true);
+    $ginoPino = new User('Gino Pino', 'ginopino@gmail.com', false, null);
+
+    if(!$card1->checkValidationCard()){
+        echo 'Carta scaduta';
+    }
     
-
-
-
+    
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
