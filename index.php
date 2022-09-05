@@ -19,21 +19,27 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
     $card1 = new Card('2025-12-20', 234, '054', 'Gino Pino');
     $bedsPuppy = new Bed('KingPuppy', 45, 'Silk','100x100cm');
     $chickenTrumpet = new Game('Chicken Trumpet', 20.99, 'Plastic', '20x5cm', true);
-    $ginoPino = new User('Gino Pino', 'ginopino@gmail.com', false, null);
+    $ginoPino = new User('Gino Pino', 'ginopino@gmail.com', true, null);
 
     $discount = 0;
-
+    
     if(!$card1->checkValidationCard()){
         echo 'Carta scaduta';
     }
     
     if($ginoPino->getRegistered()){
-        $discount=0.2;
+        $discount = 0.2;
     }
 
     $ginoPino->addToCart($chickenTrumpet);
     
-    var_dump($ginoPino->getSum());
+    if($discount != 0){
+      $finalPrice = round($ginoPino->getsum() - ($ginoPino->getsum() * $discount), 2);
+    }
+    else{
+        $finalPrice = $ginoPino->getSum();   
+    }
+    var_dump($finalPrice)
 ?>
 <!DOCTYPE html> 
 <html lang="en">
